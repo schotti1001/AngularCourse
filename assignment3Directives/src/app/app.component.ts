@@ -12,7 +12,7 @@ export class AppComponent {
     toggleVisibility(){
         this.showSecret = !this.showSecret;
         var newEntry = this.allClicks.length+1;
-        this.allClicks.push(newEntry);
+        this.allClicks.push(new Date());
         console.log(newEntry)
     }
 

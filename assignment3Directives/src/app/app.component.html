@@ -12,9 +12,9 @@
       <p *ngIf="showSecret">Secret Password = tuna</p>
       <ul>
         <li 
-        *ngFor="let log of allClicks"
-        [ngStyle]="{backgroundColor: after5(log) ? 'lightBlue': null}"
-        [ngClass]="{white: after5(log)}"
+        *ngFor="let log of allClicks; let i = index"
+        [ngStyle]="{backgroundColor: after5(i) ? 'lightBlue': null}"
+        [ngClass]="{white: after5(i)}"
         >{{log}}</li>
       </ul>
     </div>
