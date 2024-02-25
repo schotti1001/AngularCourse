@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'courseProject';
+  selectedTab = 'recipe';
+
+  handleHeaderClick(feature: string) {
+    console.log(feature);
+    this.selectedTab = feature;
+  }
 }
