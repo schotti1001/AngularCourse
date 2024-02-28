@@ -19,7 +19,7 @@ import { LoggingService } from './logging.service';
     BrowserModule,
     FormsModule,
   ],
-  providers: [AccountsService, LoggingService],
+  providers: [], // Angular 6- Version: [AccountsService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
