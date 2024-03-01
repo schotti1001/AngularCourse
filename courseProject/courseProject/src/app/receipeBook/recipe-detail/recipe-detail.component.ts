@@ -17,7 +17,6 @@ export class RecipeDetailComponent {
     }
 
     sendIngredientsToShoppingList(){
-        console.log('adding')
         for(var ingredient of this.recipe.ingredients){
             this.shoppingList.addIngredient(ingredient);
         }
