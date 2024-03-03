@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -7,9 +7,13 @@ import { EditShoppingListComponent } from './shoppingList/edit-shopping-list/edi
 import { RecipeItemComponent } from './receipeBook/recipe-list/recipe-item/recipe-item.component';
 import { RecipeDetailComponent } from './receipeBook/recipe-detail/recipe-detail.component';
 import { HeaderComponent } from './header/header.component';
-import { Recipes } from './receipeBook/recipe.component'
+import { RecipesComponent } from './receipeBook/recipe.component'
 import { RecipeList } from './receipeBook/recipe-list/recipe-list.component'
 import { DropdownDirective } from './shared/dropdown.directive';
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { NoRecipeSelectecdComponent } from './receipeBook/no-recipe-selectecd/no-recipe-selectecd.component';
+import { RecipeEditComponent } from './receipeBook/recipe-edit/recipe-edit.component';
 
 
 @NgModule({
@@ -20,12 +24,15 @@ import { DropdownDirective } from './shared/dropdown.directive';
     RecipeItemComponent,
     RecipeDetailComponent,
     HeaderComponent,
-    Recipes,
+    RecipesComponent,
     RecipeList,
-    DropdownDirective
+    DropdownDirective,
+    NoRecipeSelectecdComponent,
+    RecipeEditComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
