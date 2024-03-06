@@ -10,9 +10,7 @@ import { RecipeBookService } from '../../recipe-book.service';
 export class RecipeItemComponent {
     @Input() recipe: Recipe;
 
-    constructor(private recipeBookService: RecipeBookService) {}
+    constructor() {}
 
-    clickOnRecipe(){
-        this.recipeBookService.recipeSelected.emit(this.recipe);
-    }
+ 
 }

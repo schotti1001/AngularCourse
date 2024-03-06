@@ -8,12 +8,13 @@ import { RecipeItemComponent } from './receipeBook/recipe-list/recipe-item/recip
 import { RecipeDetailComponent } from './receipeBook/recipe-detail/recipe-detail.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './receipeBook/recipe.component'
-import { RecipeList } from './receipeBook/recipe-list/recipe-list.component'
+import { RecipeListComponent } from './receipeBook/recipe-list/recipe-list.component'
 import { DropdownDirective } from './shared/dropdown.directive';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { NoRecipeSelectecdComponent } from './receipeBook/no-recipe-selectecd/no-recipe-selectecd.component';
 import { RecipeEditComponent } from './receipeBook/recipe-edit/recipe-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,14 +26,16 @@ import { RecipeEditComponent } from './receipeBook/recipe-edit/recipe-edit.compo
     RecipeDetailComponent,
     HeaderComponent,
     RecipesComponent,
-    RecipeList,
+    RecipeListComponent,
     DropdownDirective,
     NoRecipeSelectecdComponent,
     RecipeEditComponent
   ],
   imports: [
     BrowserModule, 
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
