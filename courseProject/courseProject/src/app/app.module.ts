@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { NoRecipeSelectecdComponent } from './receipeBook/no-recipe-selectecd/no-recipe-selectecd.component';
 import { RecipeEditComponent } from './receipeBook/recipe-edit/recipe-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataStorageService } from './shared/data-storage.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,13 +31,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RecipeListComponent,
     DropdownDirective,
     NoRecipeSelectecdComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
   ],
   imports: [
     BrowserModule, 
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

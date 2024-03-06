@@ -63,7 +63,7 @@ export class RecipeEditComponent implements OnInit{
         if(Number.isNaN(this.id)) {
             id = this.recipeService.getIdForNewRecipe();
         }
-        const newRecipe = new Recipe(id, 
+        const newRecipe = new Recipe(
             this.recipeForm.value['name'],
             this.recipeForm.value['description'],
             this.recipeForm.value['imagePath'],
