@@ -17,6 +17,8 @@ import { RecipeEditComponent } from './receipeBook/recipe-edit/recipe-edit.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataStorageService } from './shared/data-storage.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     DropdownDirective,
     NoRecipeSelectecdComponent,
     RecipeEditComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule, 
