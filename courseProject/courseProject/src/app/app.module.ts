@@ -15,19 +15,15 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { AlertComponent } from './shared/alert/alert.component';
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 import { RecipesModule } from './receipeBook/recipes.module';
+import { ShoppingListModule } from './shoppingList/shopping-list.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingListComponent,
-    EditShoppingListComponent,
     HeaderComponent,
-    DropdownDirective,
     AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceholderDirective
   ],
   imports: [
     BrowserModule, 
@@ -35,7 +31,9 @@ import { RecipesModule } from './receipeBook/recipes.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RecipesModule
+    RecipesModule, 
+    ShoppingListModule,
+    SharedModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

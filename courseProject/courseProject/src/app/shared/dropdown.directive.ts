@@ -13,7 +13,4 @@ export class DropdownDirective  {
       }
 
       constructor(private elRef: ElementRef) {}
-
-
- 
 }

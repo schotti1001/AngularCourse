@@ -11,7 +11,6 @@ import { canActivateGuard } from "./auth/auth.guard";
 
 const appRoutes: Routes = [
     {path:'', redirectTo: '/recipes', pathMatch: 'full'},
-    {path:'shopping-list', component: ShoppingListComponent},
     {path: 'auth', component: AuthComponent}
 ]
 

@@ -6,9 +6,9 @@ import { RecipeListComponent } from "./recipe-list/recipe-list.component";
 import { RecipesComponent } from "./recipe.component";
 import { NoRecipeSelectecdComponent } from "./no-recipe-selectecd/no-recipe-selectecd.component";
 import { RouterModule } from "@angular/router";
-import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import {  ReactiveFormsModule } from "@angular/forms";
 import { RecipesRoutingModule } from "./recipes-routing.module";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -18,18 +18,11 @@ import { RecipesRoutingModule } from "./recipes-routing.module";
         RecipeListComponent,
         RecipeEditComponent,
         NoRecipeSelectecdComponent,
-    ], exports: [
-        RecipeItemComponent,
-        RecipeDetailComponent,
-        RecipesComponent,
-        RecipeListComponent,
-        RecipeEditComponent,
-        NoRecipeSelectecdComponent,
     ], imports: [
         RouterModule,
-        CommonModule,
         ReactiveFormsModule,
-        RecipesRoutingModule
+        RecipesRoutingModule,
+        SharedModule
     ]
 })
 export class RecipesModule{}
