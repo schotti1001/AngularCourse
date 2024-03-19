@@ -17,23 +17,22 @@ import { PlaceholderDirective } from './shared/placeholder/placeholder.directive
 import { RecipesModule } from './receipeBook/recipes.module';
 import { ShoppingListModule } from './shoppingList/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AuthComponent,
   ],
   imports: [
     BrowserModule, 
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     RecipesModule, 
     ShoppingListModule,
-    SharedModule
+    SharedModule,
+    AuthModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
