@@ -1,6 +1,6 @@
 import { Injectable, inject } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, CanActivateFn, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { Observable, map } from "rxjs";
+import { Observable, map, take } from "rxjs";
 import { AuthService } from "./auth.service";
 
 
@@ -11,7 +11,7 @@ export const canActivateGuard: CanActivateFn = (route: ActivatedRouteSnapshot, s
         const authService = inject(AuthService);
         const router = inject(Router);
         
-        return authService.user.pipe(map(user => {
+        return authService.user.pipe(take(1), map(user => {
              const isAuth =  !!user;
              if(isAuth){
                 return true;
@@ -19,5 +19,3 @@ export const canActivateGuard: CanActivateFn = (route: ActivatedRouteSnapshot, s
              return router.createUrlTree(['/auth']);
             }));
     }
-         
-    
