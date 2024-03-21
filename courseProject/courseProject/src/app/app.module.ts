@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { SharedModule } from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule, 
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
