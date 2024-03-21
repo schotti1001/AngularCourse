@@ -15,9 +15,11 @@ import { CounterEffects } from './store/counter.effects';
     CounterOutputComponent,
     CounterControlsComponent,
   ],
-  imports: [BrowserModule, StoreModule.forRoot({
-    counter: counterReducer
-  },), EffectsModule.forRoot([CounterEffects])],
+  imports: [BrowserModule, 
+    StoreModule.forRoot({
+        counter: counterReducer
+    },), 
+    EffectsModule.forRoot([])],
   providers: [],
   bootstrap: [AppComponent],
 })
