@@ -8,6 +8,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
+import { shopplingListReducer } from './shoppingList/store/shopping-list.reducer';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { StoreModule } from '@ngrx/store';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({shoppingList: shopplingListReducer})
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
