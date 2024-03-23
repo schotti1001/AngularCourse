@@ -1,6 +1,6 @@
-import { Ingredient } from "../../shared/ingredient.model";
+import { AppState } from "../../store/app.reducer";
 import { State } from "./shopping-list.reducer";
 
-export const selectAllIngredients = (state: {shoppingList: State}) => state.shoppingList.ingredients;
+export const selectAllIngredients = (state: AppState) => state.shoppingList.ingredients;
 
-export const shopping = (state: {shoppingList: State}) => state.shoppingList;
+export const shopping = (state: AppState) => state.shoppingList;
