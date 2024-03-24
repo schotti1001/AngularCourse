@@ -1,19 +1,33 @@
-import { Injectable, inject } from "@angular/core";
-import { ActivatedRouteSnapshot, Resolve, ResolveFn, RouterStateSnapshot } from "@angular/router";
-import { Observable } from "rxjs";
+import { inject } from "@angular/core";
+import { ResolveFn, } from "@angular/router";
+import { Observable, of, switchMap, take, } from "rxjs";
 import { Recipe } from "../recipe.model";
-import { DataStorageService } from "../../shared/data-storage.service";
-import { RecipeBookService } from "../recipe-book.service";
+import { Store } from "@ngrx/store";
+import { Actions, ofType } from "@ngrx/effects";
+import { fetchRecipes } from "../store/recipes.actions";
+import { getRecipes } from "../store/recipes.selectors";
 
-export const recipeResolver: ResolveFn<Recipe[]> = (
-    route: ActivatedRouteSnapshot,  state: RouterStateSnapshot
-   ): Observable<Recipe[]> | Promise<Recipe[]> | Recipe[] => 
-   {
-    const recipes = inject(RecipeBookService).getRecipes();
-    if(recipes.length === 0 ) {
-        return inject(DataStorageService).fetchData();
-    } else {
-        return recipes;
-    }
- };
+export const recipeResolver: ResolveFn<Recipe[]> = (): Observable<Recipe[]> => {
+    const store = inject(Store);
+    const actions$ = inject(Actions);
+
+    return store.select(getRecipes).pipe(
+        take(1),
+        switchMap(recipes => {
+        if(recipes.length === 0){
+            store.dispatch(fetchRecipes());
+        
+            return actions$.pipe(
+                ofType('[Recipe] Set Recipes'),
+                take(1),
+            );
+        } else {
+            return of(recipes);
+        }
+    
+       
+
+    }))
+   
+};
    

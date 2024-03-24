@@ -3,7 +3,7 @@ import { createAction, props } from "@ngrx/store";
 
 export const authSuccess = createAction(
     '[Auth] Auth Success',
-    props<{email: string, userId: string, token: string, expirationDate: Date}>()
+    props<{email: string, userId: string, token: string, expirationDate: Date, redirect: boolean}>()
 )
 
 export const loginStart = createAction(

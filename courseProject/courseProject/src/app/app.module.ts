@@ -13,6 +13,8 @@ import { EffectsModule } from '@ngrx/effects'
 import { environment } from '../environment/environment';
 import {  StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AuthEffects } from './auth/store/auth.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { RecipeEffects } from './receipeBook/store/recipes.effects';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,9 @@ import { AuthEffects } from './auth/store/auth.effects';
     HttpClientModule,
     SharedModule,
     StoreModule.forRoot(appReducer),
-    EffectsModule.forRoot([AuthEffects]),
-    StoreDevtoolsModule.instrument({ logOnly: environment.production})
+    EffectsModule.forRoot([AuthEffects, RecipeEffects]),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production}),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
