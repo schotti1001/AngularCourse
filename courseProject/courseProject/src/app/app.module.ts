@@ -1,5 +1,5 @@
 import {  NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -35,7 +35,7 @@ import { RecipeEffects } from './receipeBook/store/recipes.effects';
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptorService,
     multi: true
-  }],
+  }, provideClientHydration()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
